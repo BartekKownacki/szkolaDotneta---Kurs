@@ -11,21 +11,24 @@ namespace Zad_tydz2_7
             int age;
             Console.Write("Proszę podaj swój wiek: ");
             Int32.TryParse(Console.ReadLine(), out age);
-            if (age >= 21 && age < 30)
+            if (age >= 21)
             {
                 Console.WriteLine("Możesz zostać posłem");
             }
-            else if (age >= 21 && age < 35)
+
+            if (age >= 30)
             {
-                Console.WriteLine("Możesz zostać posłem i senatorem (premierem?)");
+                Console.WriteLine("Możesz zostać senatorem");
             }
-            else if (age >= 21)
+
+            if (age >= 35)
             {
-                Console.WriteLine("Możesz zostać posłem i senatorem (premierem? oraz prezydentem RP)");
+                Console.WriteLine("Możesz zostać prezydentem");
             }
-            else
+            
+            if (age < 21)
             {
-                Console.WriteLine("Niestety nie możesz kandydować :(");
+                Console.WriteLine("Nie możesz brać biernego udziału w wyborach");
             }
         }
     }
