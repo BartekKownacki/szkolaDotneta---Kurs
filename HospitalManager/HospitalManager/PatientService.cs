@@ -41,5 +41,27 @@ namespace HospitalManager
             Patient patient = new Patient(user) { Id = patientId, FirstName = firstName, LastName = lastName, PESEL = pesel, PhoneNumber = phoneNumber, EmailAdress= emailAdress};
             patients.Add(patient);
         }
+
+        public void Remove(string pesel)
+        {
+            foreach(var patient in patients)
+            {
+                if(patient.PESEL==pesel)
+                {
+                    patients.Remove(patient);
+                }
+            }
+        }
+
+        public void Remove(int id)
+        {
+            foreach (var patient in patients)
+            {
+                if (patient.Id == id)
+                {
+                    patients.Remove(patient);
+                }
+            }
+        }
     }
 }

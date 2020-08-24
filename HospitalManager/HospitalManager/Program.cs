@@ -110,9 +110,19 @@ namespace HospitalManager
                         {
                             case '1':
                                 string pesel;
-                                patientService.RemoveByPesel(pesel)
+                                Console.Write("Please write patient's PESEL number: ");
+                                pesel = Console.ReadLine();
+                                patientService.Remove(pesel);
                                 break;
-
+                            case '2':
+                                int id;
+                                Console.Write("Please write patient's ID number: ");
+                                Int32.TryParse(Console.ReadLine(), out id);
+                                patientService.Remove(id);
+                                break;
+                            default:
+                                Console.WriteLine($"Operation number { option.KeyChar} does not exist.");
+                                break;
                         }
                         break;
                     default:
